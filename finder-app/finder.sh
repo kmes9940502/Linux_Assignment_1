@@ -5,11 +5,8 @@ counter=0
 strcounter=0
 
 #check if the parameters is valid
-if [ $# -lt 2 ]; then
-    echo "Parameters not specified!!"
-    exit 1
-elif [ $# -gt 2 ]; then
-    echo "Too much parameters!!"
+if [ $# -ne 2 ]; then
+    echo "Invalid parameters!!"
     exit 1
 else
     #check if the directory exist
@@ -17,7 +14,7 @@ else
         echo "Path: ${filesdir}, searching key: ${searchstr}"
     else
         echo "Directory does not exists!!"
-        exit 2
+        exit 1
     fi
 fi
 
